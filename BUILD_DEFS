@@ -1,0 +1,30 @@
+# -*- mode: python -*-
+
+import os
+
+original_glob = glob
+def glob(*args, **kwargs):
+  result = original_glob(*args, **kwargs)
+  result.sort()
+  return result
+
+def subdir_glob(glob_specs):
+  """
+  Given a list of tuples, the form of (relative-sub-directory, glob-pattern),
+  return a dict of sub-directory relative paths to full paths.  Useful for
+  defining header maps for C/C++ libraries which should be relative the given
+  sub-directory.
+  """
+
+  results = {}
+
+  for dirpath, glob_pattern in glob_specs:
+    files = glob([os.path.join(dirpath, glob_pattern)])
+    for f in files:
+      if dirpath:
+        results[f[len(dirpath) + 1:]] = f
+      else:
+        results[f] = f
+
+  return results
+

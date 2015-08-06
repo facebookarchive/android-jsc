@@ -1,0 +1,124 @@
+[buildfile]
+    includes = //BUILD_DEFS
+[ndk]
+    ndk_version = r10c
+    cppflags = \
+        -std=gnu11 \
+        -Wall \
+        -Werror \
+        -g3 \
+        -DNEBUG \
+        -fstack-protector
+    cflags = \
+        -std=gnu11 \
+        -Wall \
+        -Werror \
+        -g3 \
+        -Wa,--noexecstack \
+        -fstack-protector \
+        -ffunction-sections \
+        -funwind-tables \
+        -fomit-frame-pointer \
+        -fno-strict-aliasing
+    cxxppflags = \
+        -std=gnu++11 \
+        -Wall \
+        -Werror \
+        -Wno-literal-suffix \
+        -g3 \
+        -DNEBUG \
+        -fstack-protector \
+        -fno-exceptions \
+        -fno-rtti
+    cxxflags = \
+        -std=gnu++11 \
+        -Wall \
+        -Werror \
+        -g3 \
+        -Wa,--noexecstack \
+        -fstack-protector \
+        -ffunction-sections \
+        -funwind-tables \
+        -fomit-frame-pointer \
+        -fno-strict-aliasing \
+        -fno-exceptions \
+        -fno-rtti
+    ldflags = \
+        -Wl,--build-id \
+        -Wl,-z,noexecstack \
+        -Wl,--gc-sections \
+        -Wl,-z,defs \
+        -Wl,-z,nocopyreloc \
+        -Wl,--as-needed
+    arm_cppflags = \
+        -mthumb \
+        -Os
+    arm_cflags = \
+        -mtune=xscale \
+        -msoft-float \
+        -mthumb \
+        -Os
+    arm_cxxppflags = \
+        -mthumb \
+        -Os
+    arm_cxxflags = \
+        -mtune=xscale \
+        -msoft-float \
+        -mthumb \
+        -Os
+    arm_ldflags = \
+        -Wl,--fix-cortex-a8
+    armv7_cppflags = \
+        -mfloat-abi=softfp \
+        -mthumb \
+        -Os
+    armv7_cflags = \
+        -finline-limit=64 \
+        -mfpu=vfpv3-d16 \
+        -mfloat-abi=softfp \
+        -mthumb \
+        -Os
+    armv7_cxxppflags = \
+        -mfloat-abi=softfp \
+        -mthumb \
+        -Os
+    armv7_cxxflags = \
+        -finline-limit=64 \
+        -mfpu=vfpv3-d16 \
+        -mfloat-abi=softfp \
+        -mthumb \
+        -Os
+    x86_cppflags = \
+        -O2
+    x86_cflags = \
+        -funswitch-loops \
+        -finline-limit=300 \
+        -O2
+    x86_cxxppflags = \
+        -O2
+    x86_cxxflags = \
+        -funswitch-loops \
+        -finline-limit=300 \
+        -O2
+[cxx]
+    preprocess_mode = piped
+    cppflags = \
+        -std=gnu11 \
+        -pthread \
+        -O0 \
+        -g3
+    cflags = \
+        -std=gnu11 \
+        -pthread \
+        -O0 \
+        -g3
+    cxxppflags = \
+        -std=gnu++11 \
+        -pthread \
+        -O0 \
+        -g3
+    cxxflags = \
+        -std=gnu++11 \
+        -pthread \
+        -O0 \
+        -g3
