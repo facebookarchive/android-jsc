@@ -2,6 +2,8 @@
 
 # Copyright 2004-present Facebook. All Rights Reserved.
 
+set -e
+
 cd "$(dirname "$0")"
 
 AAR_PATH=buck-out/gen/android-jsc.aar
