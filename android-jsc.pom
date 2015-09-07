@@ -11,4 +11,24 @@
   <description>JavaScriptCore library for android</description>
   <url>https://www.webkit.org</url>
 
+  <licenses>
+    <license>
+      <name>BSD License</name>
+      <url>https://raw.githubusercontent.com/facebook/android-jsc/master/LICENSE</url>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <id>kmagiera</id>
+      <name>Krzysztof Magiera</name>
+      <url>https://github.com/kmagiera</url>
+    </developer>
+  </developers>
+
+  <scm>
+    <connection>https://github.com/facebook/android-jsc.git</connection>
+    <developerConnection>https://github.com/facebook/android-jsc.git</developerConnection>
+    <url>https://github.com/facebook/android-jsc</url>
+  </scm>
 </project>
