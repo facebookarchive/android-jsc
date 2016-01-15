@@ -33,10 +33,15 @@ After installation, the android-jsc AAR file should be accessible through maven:
 
 **1. Using BUCK**
 ```python
-remote_file(
+android_prebuilt_aar(
   name = 'android-jsc',
-  url = 'mvn://org.webkit:android-jsc:r174650',
-  sha1 = 'd4b32ee79922794b04bfbbcde0cf9572baaa1b84',
+  aar = ':android-jsc-aar',
+)
+
+remote_file(
+  name = 'android-jsc-aar',
+  url = 'mvn:org.webkit:android-jsc:aar:r174650',
+  sha1 = '880cedd93f43e0fc841f01f2fa185a63d9230f85',
 )
 ```
 
