@@ -152,6 +152,7 @@ SOURCE_FILES = [
   'common/normalizer2impl.cpp',
   'common/normalizer2.cpp',
   'common/filterednormalizer2.cpp',
+  'common/filteredbrk.cpp',
   'common/ucol_swp.cpp',
   'common/uprops.cpp',
   'common/utrie2.cpp',
